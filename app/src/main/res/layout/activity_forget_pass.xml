@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ForgetPassActivity">
+
+    <TextView
+        android:id="@+id/txt_Fpass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter a valid email id
+                      to get the password
+                      reset link!!!"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="180dp"
+        android:gravity="center"/>
+
+
+    <EditText
+        android:id="@+id/edt_ForgetPassEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Fpass"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:hint="Enter valid email"
+        android:gravity="center"/>
+
+
+
+    <Button
+        android:id="@+id/btn_SendResetLink"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Send Reset Link"
+        app:layout_constraintTop_toBottomOf="@+id/edt_ForgetPassEmail"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

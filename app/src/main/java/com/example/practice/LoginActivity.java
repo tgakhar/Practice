@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     EditText edt_email, edt_pass;
     Button btn_login;
-    TextView txt_nUser;
+    TextView txt_nUser, txt_forgetPass;
     String email, pass;
     FirebaseAuth auth;
 
@@ -35,7 +35,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         edt_pass = findViewById(R.id.edt_logPass);
         btn_login = findViewById(R.id.btn_logLogin);
         txt_nUser = findViewById(R.id.txt_loginRegister);
+        txt_forgetPass = findViewById(R.id.txt_LoginForgetPass);
         btn_login.setOnClickListener(this);
+        txt_forgetPass.setOnClickListener(this);
         txt_nUser.setOnClickListener(this);
 
     }
@@ -45,6 +47,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.btn_logLogin:
                 login();
+                break;
+
+            case R.id.txt_LoginForgetPass:
+                Intent intent1 = new Intent(getApplicationContext(),ForgetPassActivity.class);
+                startActivity(intent1);
                 break;
 
             case R.id.txt_loginRegister:
@@ -85,6 +92,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    Intent intent= new Intent(getApplicationContext(),HomeActivity.class);
+                    startActivity(intent);
+
                     Toast.makeText(LoginActivity.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(LoginActivity.this, "Login failed!!", Toast.LENGTH_SHORT).show();

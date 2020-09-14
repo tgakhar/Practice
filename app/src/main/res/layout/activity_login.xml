@@ -61,12 +61,31 @@
         android:id="@+id/txt_loginRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:text="New User?Register"
         android:textAlignment="center"
         android:textSize="20dp"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_LoginForgetPass"
         app:layout_constraintTop_toBottomOf="@+id/btn_logLogin" />
+
+
+    <TextView
+        android:id="@+id/txt_LoginForgetPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password"
+        app:layout_constraintTop_toBottomOf="@+id/btn_logLogin"
+        app:layout_constraintEnd_toEndOf="@id/btn_logLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="25dp"/>
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
