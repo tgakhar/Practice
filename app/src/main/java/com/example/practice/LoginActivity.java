@@ -16,7 +16,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     EditText edt_email, edt_pass;
@@ -24,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     TextView txt_nUser, txt_forgetPass;
     String email, pass;
     FirebaseAuth auth;
+
 
 
     @Override
@@ -97,7 +100,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     Toast.makeText(LoginActivity.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
                 }else {
+
+                    try {
+
+                        throw task.getException();
+
+                    } catch (FirebaseAuthInvalidUserException e) {
+
+                        edt_email.getText().clear();
+                        edt_email.requestFocus();
+                        edt_email.setError("Account does not exist, register first");
+                    } catch (Exception e){
+                }
                     Toast.makeText(LoginActivity.this, "Login failed!!", Toast.LENGTH_SHORT).show();
+
                 }
 
             }

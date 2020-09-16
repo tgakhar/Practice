@@ -19,6 +19,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <EditText
+        android:id="@+id/edt_NameRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="85dp"
+        android:hint="Enter name"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/edt_mainEmail"
+        android:layout_marginBottom="15dp"/>
+
+
     <EditText
         android:id="@+id/edt_mainEmail"
         android:layout_width="wrap_content"
@@ -65,11 +78,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_mainPass" />
 
+
+    <EditText
+        android:id="@+id/edt_RegphNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter phone number"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="85dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/edt_mainCpass"
+        android:layout_marginTop="15dp"/>
+
+
+
+
+
+
     <Button
         android:id="@+id/btn_mainReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="80dp"
         android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +109,7 @@
         android:id="@+id/txt_mainLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:text="Already Registered?Login."
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20dp"
